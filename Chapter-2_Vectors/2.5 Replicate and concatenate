@@ -1,0 +1,7 @@
+module top(
+    input [1:0] alert,
+    output [7:0] display
+);
+    // write code here
+    assign display={4{alert}};
+endmodule
