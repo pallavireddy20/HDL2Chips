@@ -1,0 +1,9 @@
+module top(
+    input a,
+    input b,
+    output out
+);
+    // Instantiate or_gate here
+    // or_gate u1 (.x(), .y(), .z());
+    or_gate u1(.x(a),.y(b),.z(out));
+endmodule
