@@ -1,0 +1,10 @@
+module top(
+    input [7:0] meera,
+    input [7:0] raj,
+    output echo,
+    output river
+);
+    // Write your code here
+    assign echo=|(meera & raj);
+    assign river=meera && raj;
+endmodule
