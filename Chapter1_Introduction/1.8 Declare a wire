@@ -1,0 +1,49 @@
+module top(
+    input ravi,
+    input priya,
+    output out
+);
+
+    wire w1, w2, w3;
+
+    approval a1 (
+        .p(ravi),
+        .q(priya),
+        .r(w1)
+    );
+
+    confirm c1 (
+        .s(ravi),
+        .t(priya),
+        .u(w2)
+    );
+
+    override o1 (
+        .s(w1),
+        .t(w2),
+        .u(w3)
+    );
+
+    unlock u1 (
+        .s(w3),
+        .t(priya),
+        .u(out)
+    );
+
+endmodule
+
+module approval(input p, input q, output r);
+    assign r = p & q;
+endmodule
+
+module confirm(input s, input t, output u);
+    assign u = s | t;
+endmodule
+
+module override(input s, input t, output u);
+    assign u = s ^ t;
+endmodule
+
+module unlock(input s, input t, output u);
+    assign u = ~(s & t);
+endmodule
