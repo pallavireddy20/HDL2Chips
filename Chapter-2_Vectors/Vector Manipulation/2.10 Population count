@@ -1,0 +1,23 @@
+module top(
+    input  [7:0] data,
+    output [3:0] ones,
+    output [7:0] rev,
+    output [15:0] ext,
+    output odd
+);
+
+    // Population count
+    assign ones = data[0] + data[1] + data[2] + data[3] +
+                  data[4] + data[5] + data[6] + data[7];
+
+    // Reverse bits
+    assign rev = {data[0], data[1], data[2], data[3],
+                  data[4], data[5], data[6], data[7]};
+
+    // Sign extension
+    assign ext = {{8{data[7]}}, data};
+
+    // Odd parity detector
+    assign odd = ^data;
+
+endmodule
