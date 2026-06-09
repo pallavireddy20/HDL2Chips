@@ -1,0 +1,10 @@
+module top(
+    input [3:0] a,
+    input [3:0] b,
+    output gt,
+    output lt
+);
+    // Write your code here
+    assign gt=a>b;
+    assign lt=a<b;
+endmodule
