@@ -1,0 +1,7 @@
+module top(
+    input [7:0] hands,
+    output odd
+);
+    // Write your code here
+    assign odd=^hands;
+endmodule
