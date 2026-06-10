@@ -1,0 +1,7 @@
+module top(
+    input [2:0] iris,
+    output alert
+);
+    // Write your code here
+    assign alert=~iris[0]&~iris[1]&~iris[2];
+endmodule
