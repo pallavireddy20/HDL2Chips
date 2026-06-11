@@ -1,0 +1,9 @@
+module top(
+    input switch,
+    input [7:0] alice,
+    input [7:0] bob,
+    output [7:0] result
+);
+    // Write your code here
+    assign result=switch?alice:bob;
+endmodule
