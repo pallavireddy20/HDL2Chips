@@ -1,0 +1,15 @@
+module top(
+    input [3:0] in,
+    output [15:0] out
+);
+    // Write your code here
+        wire [3:0] rev;
+
+    assign rev[3] = in[0];
+    assign rev[2] = in[1];
+    assign rev[1] = in[2];
+    assign rev[0] = in[3];
+
+    assign out = {{12{rev[3]}}, rev};
+    
+endmodule
