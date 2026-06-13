@@ -1,0 +1,25 @@
+module top(
+    input [3:0] a,
+    input [3:0] b,
+    input cin,
+    output reg [3:0] sum,
+    output reg cout
+);
+    // Write your code here
+     reg [4:0] raw_sum;
+
+    always @(*) begin
+        raw_sum = a + b + cin;
+
+        if (raw_sum > 9) begin
+            raw_sum = raw_sum + 5'd6;
+            sum  = raw_sum[3:0];
+            cout = 1'b1;
+        end
+        else begin
+            sum  = raw_sum[3:0];
+            cout = 1'b0;
+        end
+    end
+    
+endmodule
