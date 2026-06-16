@@ -1,0 +1,12 @@
+module top(
+    input a,
+    input b,
+    output reg out
+);
+   always @(*) begin
+    if (a)
+        out = b;
+    else
+        out = 0;   // Explicit default
+end
+endmodule
