@@ -1,17 +1,17 @@
+
 module top(
     input clk,
     input in,
     output out
 );
-    // Write your code here
-   
 
-    reg in_prev;
+    reg in_d1, in_d2;
 
-    always @(posedge clk)
-        in_prev <= in;
+    always @(posedge clk) begin
+        in_d1 <= in;
+        in_d2 <= in_d1;
+    end
 
-    assign out = in & ~in_prev;
-
+    assign out = in_d1 & ~in_d2;
 
 endmodule
