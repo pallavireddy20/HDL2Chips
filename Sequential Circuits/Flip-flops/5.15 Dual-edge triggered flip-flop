@@ -1,0 +1,20 @@
+module top(
+    input clk,
+    input d,
+    output q
+);
+
+    reg q_pos, q_neg;
+
+    // Capture on rising edge
+    always @(posedge clk)
+        q_pos <= d;
+
+    // Capture on falling edge
+    always @(negedge clk)
+        q_neg <= d;
+
+    // MUX selects the most recently updated FF
+    assign q = clk ? q_pos : q_neg;
+
+endmodule
