@@ -1,0 +1,16 @@
+module top(
+    input clk,
+    input reset,
+    output reg [3:0] q
+);
+    // Write your code here
+    always @(posedge clk)
+        begin
+            if (reset)
+        q <= 4'd0;          // synchronous reset
+    else if (q == 4'd11)
+        q <= 4'd0;          // wrap at 11
+    else
+        q <= q + 4'd1;      // normal counting
+        end
+endmodule
